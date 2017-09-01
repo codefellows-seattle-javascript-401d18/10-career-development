@@ -1,26 +1,26 @@
-## Configuration
-* `README.md`
-* `.gitignore`
-* `.eslintrc.json`
-* `.eslintignore`
-* `.package.json`
+## Configuration  
+* created the following files:  
+  * `README.md`  
+  * `.gitignore`  
+  * `.eslintrc.json`  
+  * `.eslintignore`  
+  * `.package.json`  
+  * index.js  
 
-## Feature Tasks
-* implement `reverse()` as a method on the Linked List prototype; from your whiteboard exercise
-* complete the Linked List data structure by adding a `removeNthNode(n)` method
-* in comments above or within each function, note the Big-O runtime
+* created the following directories and sub files:  
+  * __test__  
+    * sll.test.js  
+  * lib  
+    * dll.js  
+    * node.js  
+    * sll.js  
 
-# Documentation
-* Write a description on your code in your readme
+## Feature Tasks  
+* implemented `reverse()` as a method on the Linked List prototype; from my whiteboard exercise  
+* complete the Linked List data structure by adding a `removeNthNode(n)` method  
+* in comments above or within each function, noted the Big-O runtime  
 
-## Test
-* write at least three tests for each method that you've written
+## Test  
+* wrote tests for each method that I've written  
 
-## Rubric 10pts
-* LinkedList: 5pts
-* Tests: 3pts
-* Documentation & Big-O: 2pts
-
-## Bonus Points:
-  * implement `findNthNode()` as a method on the LL prototype
-  * implement `findMiddleNode()` as a method on the LL prototype
+### stil need to  complete the Linked List data structure by adding a `removeNthNode(n)`  
