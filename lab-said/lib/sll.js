@@ -38,6 +38,7 @@ module.exports = class {
     }
   }
 
+  // note: O(n)
   reverse() {
     let current = this.head;
     let previous = null;
