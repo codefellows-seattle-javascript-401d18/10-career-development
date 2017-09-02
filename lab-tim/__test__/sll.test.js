@@ -84,13 +84,39 @@ describe('Testing Singly Linked List', function() {
       });
       test('should return null because the list is empty', () => {
         this.sll.reverse();
-        console.log(this.sll.head);
         expect(this.sll.head).toBeNull();
       });
       test('should return the list unaltered because it only has one node', () => {
         this.sll.append(5);
         this.sll.reverse();
         expect(this.sll.head.val).toBe(5);
+      });
+    });
+  });
+
+  describe('#removeNthNode', () => {
+    beforeEach(done => {
+      this.sll = new SLL();
+      done();
+    });
+    describe('should removed node from list given valid input', () => {
+      test('should remove 2nd node from list', () => {
+        this.sll.append(2);
+        this.sll.append(4);
+        expect(this.sll.head.val).toBe(2);
+        expect(this.sll.head.next.val).toBe(4);
+        expect(this.sll.head.next.next).toBeNull();
+        this.sll.removeNthNode(1);
+        expect(this.sll.head.val).toBe(2);
+        expect(this.sll.head.next).toBeNull();
+      });
+      test('should remove the 1st node from the list', () => {
+        this.sll.removeNthNode(1);
+        expect(this.sll.head).toBeNull();
+      });
+      test('should return null because the list is empty', () => {
+        this.sll.removeNthNode(1);
+        expect(this.sll.head).toBeNull();
       });
     });
   });

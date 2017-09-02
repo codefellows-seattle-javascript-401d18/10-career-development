@@ -7,6 +7,7 @@ module.exports = class {
     this.head = null;
   }
 
+  // Big O(1)
   prepend(val) {
     let node = new Node(val);
     if(!this.head) {
@@ -18,6 +19,7 @@ module.exports = class {
     return node;
   }
 
+  // Big O(1)
   append(val) {
     let node = new Node(val);
     let lastNode;
@@ -38,6 +40,7 @@ module.exports = class {
     }
   }
 
+  // Big O(n)
   reverse() {
     if (!this.head || !this.head.next) return this;
 
@@ -52,5 +55,18 @@ module.exports = class {
       previous = current;
     }
     this.head = current;
+  }
+
+  removeNthNode(n) {
+    if (!this.head) return this;
+
+    let previous = this.head;
+
+    for (var i = 0; i < n-1; i++) {
+      previous = previous.next;
+    }
+    let del = previous.next;
+    let after = del.next;
+    previous.next = after;
   }
 };
