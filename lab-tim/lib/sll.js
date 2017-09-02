@@ -2,25 +2,7 @@
 
 const Node = require('./node');
 
-// module.exports = function() {
-//   this.head = null
-// }
-
-// class expression
-// const SLL = class {
-//   constructor() {
-//     this.head = null
-//   }
-// }
-
-// class definition
-// class SLL {
-//   constructor() {
-//     this.head = null
-//   }
-// }
-
-var SLL = module.exports = class {
+module.exports = class {
   constructor() {
     this.head = null;
   }
@@ -72,25 +54,3 @@ var SLL = module.exports = class {
     this.head = current;
   }
 };
-
-
-// var nodes = [];
-// var current = this.head;
-//
-// while(current) {
-//   nodes.push(current);
-//   current = current.next;
-// }
-// var reversedSll = new SLL();
-// reversedSll.head = nodes.pop();
-// current = reversedSll.head;
-//
-// var node = nodes.pop();
-//
-// while(node) {
-//   node.next = null;
-//   current.next = node;
-//   current = current.next;
-//   node = nodes.pop();
-// }
-// return reversedSll;

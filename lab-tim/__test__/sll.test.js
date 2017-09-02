@@ -45,4 +45,20 @@ describe('Testing Singly Linked List', function() {
       expect(this.sll.head.next.next.val).toBe(6);
     });
   });
+
+  describe('#reverse', () => {
+    beforeAll(done => {
+      this.sll = new SLL();
+      done();
+    });
+    test('should reverse the list', () => {
+      this.sll.append(2);
+      this.sll.append(4);
+      this.sll.append(6);
+      this.sll.reverse();
+      expect(this.sll.head.val).toBe(6);
+      expect(this.sll.head.next.val).toBe(4);
+      expect(this.sll.head.next.next.val).toBe(2);
+    });
+  });
 });
