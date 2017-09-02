@@ -85,7 +85,9 @@ current.next = 3
 prev = 4
 current = null so we break out of the loop
 
-
-
 ## A Note on Nodes
 Nodes aren't like arrays, so you can't use array methods on them. Also, there is no particular order with regard to nodes - they kind of exist out there in space.
+
+## Resources I Used:
+https://leetcode.com/problems/remove-nth-node-from-end-of-list/solution/ - I wanted to check that my idea for how to solve this on a conceptual level was correct (aka, redirect the arrows and drop one out).
+https://stackoverflow.com/questions/39283662/remove-node-from-singly-linked-list - Also referred to this while working with Maddy on Friday night (helped me get the n === 0)
