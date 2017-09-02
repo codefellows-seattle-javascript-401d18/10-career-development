@@ -46,6 +46,7 @@ module.exports = class {
       prev = curr
       curr = hold
     }
+    this.head = prev
     return prev
   }
 }

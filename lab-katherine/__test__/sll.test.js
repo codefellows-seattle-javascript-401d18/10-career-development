@@ -53,12 +53,9 @@ describe('Testing Singly Linked List', function() {
       linkedList.prepend(3)
       linkedList.prepend(2)
       linkedList.prepend(1)
-      console.log(linkedList)
-      linkedList.reverse(linkedList)
-      console.log(linkedList.reverse())
       done()
     })
-    xtest('have correctly ordered list', () => {
+    test('have correctly ordered list', () => {
       expect(linkedList.head.val).toBe(1)
       expect(linkedList.head.next.val).toBe(2)
       expect(linkedList.head.next.next.val).toBe(3)
@@ -66,11 +63,12 @@ describe('Testing Singly Linked List', function() {
       expect(linkedList.head.next.next.next.next).toBeNull()
     })
     test('reverse this list', () => {
+      linkedList.reverse()
+      console.log(linkedList)
       expect(linkedList.head.val).toBe(4)
       expect(linkedList.head.next.val).toBe(3)
       expect(linkedList.head.next.next.val).toBe(2)
       expect(linkedList.head.next.next.next.val).toBe(1)
-      expect(linkedList.head.next.next.next.next).toBeNull()
     })
   })
 })
