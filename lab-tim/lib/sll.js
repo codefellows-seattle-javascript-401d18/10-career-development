@@ -20,7 +20,7 @@ const Node = require('./node');
 //   }
 // }
 
-module.exports = class {
+var SLL = module.exports = class {
   constructor() {
     this.head = null;
   }
@@ -55,4 +55,42 @@ module.exports = class {
       _findLastNode(node.next);
     }
   }
+
+  reverse() {
+    if (!this.head || !this.head.next) return this;
+
+    let previous = null;
+    let current = null;
+    let next = this.head;
+
+    while(next !== null) {
+      current = next;
+      next = current.next;
+      current.next = previous;
+      previous = current;
+    }
+    this.head = current;
+  }
 };
+
+
+// var nodes = [];
+// var current = this.head;
+//
+// while(current) {
+//   nodes.push(current);
+//   current = current.next;
+// }
+// var reversedSll = new SLL();
+// reversedSll.head = nodes.pop();
+// current = reversedSll.head;
+//
+// var node = nodes.pop();
+//
+// while(node) {
+//   node.next = null;
+//   current.next = node;
+//   current = current.next;
+//   node = nodes.pop();
+// }
+// return reversedSll;
