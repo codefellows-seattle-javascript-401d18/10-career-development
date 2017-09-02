@@ -57,6 +57,7 @@ module.exports = class {
     this.head = current;
   }
 
+  // Big O(n)
   removeNthNode(n) {
     if (!this.head) return this;
 
