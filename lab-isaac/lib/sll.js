@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-const Node = require('./node')
+const Node = require('./node');
 
 // module.exports = function() {
 //   this.head = null
@@ -22,37 +22,51 @@ const Node = require('./node')
 
 module.exports = class {
   constructor() {
-    this.head = null
+    this.head = null;
   }
 
   prepend(val) {
-    let node = new Node(val)
+    let node = new Node(val);
     if(!this.head) {
-      this.head = node
-      return node
+      this.head = node;
+      return node;
     }
-    node.next = this.head
-    this.head = node
-    return node
+    node.next = this.head;
+    this.head = node;
+    return node;
   }
 
   append(val) {
-    let node = new Node(val)
-    let lastNode
+    let node = new Node(val);
+    let lastNode;
 
     if(!this.head) {
-      this.head = node
-      return node
+      this.head = node;
+      return node;
     }
 
-    _findLastNode(this.head)
-    lastNode.next = node
-    return node
+    _findLastNode(this.head);
+    lastNode.next = node;
+    return node;
 
     function _findLastNode(node) {
-      if(!node) return
-      lastNode = node
-      _findLastNode(node.next)
+      if(!node) return;
+      lastNode = node;
+      _findLastNode(node.next);
     }
   }
-}
+
+  reverse() {
+    let prev = null;
+    let current = this.head;
+
+    while(current) {
+      // let next;
+      let after = current.next;
+      current.next = prev;
+      prev = current;
+      current = after;
+    }
+    this.head = prev;
+  }
+};
