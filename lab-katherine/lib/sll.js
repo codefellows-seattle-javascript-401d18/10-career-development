@@ -49,4 +49,23 @@ module.exports = class {
     this.head = prev
     return prev
   }
+  removeNthNode(node){
+    if(this.head.val === node){
+      this.head = this.head.next
+      return
+    } else {
+      let prev = this.head
+      let curr = prev.next
+      while(curr) {
+        if (curr.val === node) {
+          prev.next = curr.next
+          curr = curr.next
+          return
+        } else {
+          prev = curr
+          curr = curr.next
+        }
+      }
+    }
+  }
 }
