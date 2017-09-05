@@ -61,12 +61,58 @@ module.exports = class {
     let current = this.head;
 
     while(current) {
-      // let next;
       let after = current.next;
       current.next = prev;
       prev = current;
       current = after;
     }
     this.head = prev;
+    return;
+  }
+
+  removeNthNode(n) {
+    let prev = this.head;
+
+    if(n === 1) {
+      let current = prev.next;
+      this.head = current;
+      prev = null;
+      return;
+    }
+
+    else {
+
+      for(let i = 1; i < n - 1; i++) {
+        prev = prev.next;
+      }
+      let current = prev.next;
+      let after = current.next;
+      prev.next = after;
+      current = null;
+      return;
+    }
+  }
+
+  findNthNode(n) {
+    let node = this.head;
+    for(let i = 1; i < n; i++) {
+      node = node.next;
+    }
+    return node;
+  }
+
+  findMiddleNode() {
+    let node = this.head;
+    let countNodes = 0;
+    while(node) {
+      node = node.next;
+      countNodes++;
+    }
+    let middleNode = Math.floor(countNodes/2) + 1;
+    node = this.head;
+    for(let i = 1; i < middleNode; i++) {
+      node = node.next;
+    }
+    return node;
   }
 };
