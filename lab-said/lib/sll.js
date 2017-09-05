@@ -38,6 +38,25 @@ module.exports = class {
     }
   }
 
+  removeNthNode(n) {
+    let prev = null;
+    let curr;
+    let stop = 1;
+
+    _findNthNode(this.head);
+    prev.next = curr.next;
+    curr.next = null;
+    return curr;
+
+    function _findNthNode(node) {
+      if(stop === n) return;
+      stop++;
+      prev = node;
+      curr = node.next;
+      _findNthNode(node.next);
+    }
+  }
+
   // note: O(n)
   reverse() {
     let current = this.head;
