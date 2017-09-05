@@ -70,4 +70,96 @@ describe('Testing Singly Linked List', function() {
       done();
     });
   });
+  describe('#removeNthNode(n)', () => {
+    beforeAll(done => {
+      this.sll = new SLL();
+      this.sll.append(11);
+      this.sll.append(22);
+      this.sll.append(33);
+      this.sll.append(44);
+      this.sll.append(55);
+      done();
+    });
+    test('Remove 3rd element, 3rd now equals old 4th', done => {
+      this.sll.removeNthNode(3);
+      expect(this.sll.head.next.next.val).toBe(44);
+      done();
+    });
+    test('Removing head, leaves #2 as head.', done => {
+      // console.log(this.sll.head.val);
+      this.sll.removeNthNode(1);
+      expect(this.sll.head.val).toBe(22);
+      done();
+    });
+    test('Removing the last one will make last the prior last', done => {
+      // console.log(this.sll);
+      this.sll.removeNthNode(3);
+      expect(this.sll.head.next.val).toBe(44);
+      done();
+    });
+  });
+  describe('#findNthNode(n)', () => {
+    beforeAll(done => {
+      this.sll = new SLL();
+      this.sll.prepend('THE END!!!');
+      this.sll.prepend(88);
+      this.sll.prepend(77);
+      this.sll.prepend(66);
+      this.sll.prepend(55);
+      this.sll.prepend(44);
+      this.sll.prepend(33);
+      this.sll.prepend(22);
+      this.sll.prepend(11);
+      done();
+    });
+    test('Find 1st node', done => {
+      this.sll.findNthNode(1);
+      expect(this.sll.head.val).toBe(11);
+      done();
+    });
+    test('Find 6th node', done => {
+      this.sll.findNthNode(6);
+      expect(this.sll.head.next.next.next.next.next.val).toBe(66);
+      expect(this.sll.findNthNode(6).val).toBe(66);
+      done();
+    });
+    test('find 9th node', done => {
+      this.sll.findNthNode(9);
+      expect(this.sll.findNthNode(9).val).toBe('THE END!!!');
+      done();
+    });
+  });
+  describe('#findMiddleNode', () => {
+    beforeAll(done => {
+      this.sll = new SLL();
+      this.sll.prepend('THE END!!!');
+      this.sll.prepend(88);
+      this.sll.prepend(77);
+      this.sll.prepend(66);
+      this.sll.prepend(55);
+      this.sll.prepend(44);
+      this.sll.prepend(33);
+      this.sll.prepend(22);
+      this.sll.prepend(11);
+      done();
+    });
+    test('Value of the middle node?', done => {
+      let mid = this.sll.findMiddleNode();
+      expect(mid.val).toBe(55);
+      done();
+    });
+    test('Value of middle when even number', done => {
+      this.sll.removeNthNode(9);
+      let mid = this.sll.findMiddleNode();
+      expect(mid.val).toBe(55);
+      done();
+    });
+    test('Middle when only one', done => {
+      this.sll = new SLL();
+      this.sll.prepend('The one and only!!!');
+      let mid = this.sll.findMiddleNode();
+      expect(mid.val).toBe('The one and only!!!');
+      done();
+    });
+  });
 });
