@@ -2,29 +2,12 @@
 
 const Node = require('./node');
 
-// module.exports = function() {
-//   this.head = null
-// }
-
-// class expression
-// const SLL = class {
-//   constructor() {
-//     this.head = null
-//   }
-// }
-
-// class definition
-// class SLL {
-//   constructor() {
-//     this.head = null
-//   }
-// }
 
 module.exports = class {
   constructor() {
     this.head = null;
   }
-
+  //o(1)
   prepend(val) {
     let node = new Node(val);
     if(!this.head) {
@@ -35,7 +18,7 @@ module.exports = class {
     this.head = node;
     return node;
   }
-
+  //o(1)
   append(val) {
     let node = new Node(val);
     let lastNode;
@@ -56,7 +39,7 @@ module.exports = class {
     }
   }
 
-
+  //o(1)
   reverse(){
     let current = this.head;
     let previous = null;
@@ -67,9 +50,40 @@ module.exports = class {
       previous = current;
       current = save;
     }
-    console.log(previous);
+    // console.log(previous);
     this.head = previous;
     return previous;
+  }
+  //o(n)
+  findMiddleNode(){
+    let one, two;
+    one = two = this;
+    while(two && two.next && two.next.next){
+      one = one.next;
+      two = two.next.next;
+    }
+    return one;
+  }
+
+  //O(n)
+  removeNthNode(node){
+    if(this.head.val === node){
+      this.head = this.head.next;
+      return;
+    } else {
+      let prev = this.head;
+      let curr = prev.next;
+      while(curr) {
+        if (curr.val === node) {
+          prev.next = curr.next;
+          curr = curr.next;
+          return;
+        } else {
+          prev = curr;
+          curr = curr.next;
+        }
+      }
+    }
   }
 
 
