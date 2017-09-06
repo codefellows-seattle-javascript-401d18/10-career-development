@@ -23,10 +23,10 @@
 # Documentation
 * Write a description on your code in your readme
 
-## Test 
+## Test
 * write at least three tests for each method that you've written
 
-## Rubric 10pts 
+## Rubric 10pts
 * LinkedList: 5pts
 * Tests: 3pts
 * Documentation & Big-O: 2pts
