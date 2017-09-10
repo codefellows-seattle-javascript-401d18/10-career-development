@@ -33,8 +33,5 @@
   "devDependencies": {
     "eslint": "^4.5.0",
     "jest": "^20.0.4"
-  },
-  "dependencies": {
-    "superagent": "^3.6.0"
   }
 }
