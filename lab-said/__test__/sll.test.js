@@ -40,6 +40,7 @@ describe('Testing Singly Linked List', function() {
       });
     });
   });
+
   describe('#append', () => {
     beforeAll(done => {
       this.sll = new SLL();
@@ -50,6 +51,24 @@ describe('Testing Singly Linked List', function() {
       this.sll.append(5);
       this.sll.append(6);
       expect(this.sll.head.next.next.val).toBe(6);
+    });
+    test('Testing length', () => {
+      this.sll.append(4);
+      this.sll.append(5);
+      this.sll.append(6);
+      expect(this.sll.head.next.next.next.val).toBe(4);
+    });
+  });
+
+  describe('#append with strings', () => {
+    beforeAll(done => {
+      this.sll = new SLL();
+      done();
+    });
+    test('Testing Strings', () => {
+      this.sll.append('cows');
+      this.sll.append('towers');
+      expect(this.sll.head.val).toBe('cows');
     });
   });
 });
