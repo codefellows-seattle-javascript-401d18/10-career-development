@@ -14,11 +14,13 @@ describe('Testing Singly Linked List', function() {
       expect(this.sll.head).toBeNull();
     });
   });
+
   describe('#prepend', () => {
     beforeAll(done => {
       this.sll = new SLL();
       done();
     });
+
     describe('add a new node to the head of the list', () => {
       test('should add a new node to Head', () => {
         this.sll.prepend(2);
@@ -30,6 +32,11 @@ describe('Testing Singly Linked List', function() {
         expect(this.sll.head.val).toBe(3);
         expect(this.sll.head.next.val).toBe(2);
         expect(this.sll.head.next.next).toBeNull();
+      });
+      test('should add node with cows to list', () => {
+        this.sll.prepend('cows');
+        expect(this.sll.head.val).toBe('cows');
+        expect(this.sll.head.next.val).toBe(3);
       });
     });
   });
