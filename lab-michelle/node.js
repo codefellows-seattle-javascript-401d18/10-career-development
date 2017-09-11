@@ -2,8 +2,8 @@
 'use strict';
 
 module.exports = class {
-  constructor () {
-    this.val = value;
-    this.next = next;
+  constructor (val) {
+    this.val = val;
+    this.next = null;
   }
 };

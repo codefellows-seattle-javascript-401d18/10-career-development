@@ -91,3 +91,4 @@ Nodes aren't like arrays, so you can't use array methods on them. Also, there is
 ## Resources I Used:
 https://leetcode.com/problems/remove-nth-node-from-end-of-list/solution/ - I wanted to check that my idea for how to solve this on a conceptual level was correct (aka, redirect the arrows and drop one out).
 https://stackoverflow.com/questions/39283662/remove-node-from-singly-linked-list - Also referred to this while working with Maddy on Friday night (helped me get the n === 0)
+Referenced Isaac's tests when I couldn't figure out what I was supposed to be doing with them, borrowed his idea of setting up lists in each test block
